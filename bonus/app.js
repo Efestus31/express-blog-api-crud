@@ -3,7 +3,8 @@ const app = express()
 
 //import the router
 const productsRoutes = require('./routes/product.js')
-
+// middlewere
+app.use(express.json())
 
 
 app.listen(3000, () => {

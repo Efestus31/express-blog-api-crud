@@ -1,4 +1,4 @@
-const products = [
+module.exports = [
     {
         "id": 1,
         "title": "Laptop Dell XPS 13",
@@ -118,7 +118,27 @@ const products = [
             "Gaming",
             "Tecnologia"
         ]
+    },
+    {
+        "id": 11,
+        "slug": "acer-predator-helios-300",
+        "content": "L'Acer Predator Helios 300 è un potente laptop da gaming, progettato per offrire prestazioni elevate anche con i giochi più esigenti. Con un display IPS FHD da 15,6 pollici, frequenza di aggiornamento di 144 Hz e una GPU NVIDIA GeForce RTX 3060, è ideale per il gaming ad alte prestazioni. Equipaggiato con un processore Intel Core i7 di 11ª generazione e 16 GB di RAM, offre un'ottima esperienza di gioco e multitasking. Il sistema di raffreddamento avanzato consente sessioni di gioco più lunghe senza surriscaldamenti.",
+        "image": "acer_predator_helios_300.jpeg",
+        "tags": [
+            "Laptop",
+            "Gaming",
+            "Tecnologia"
+        ]
+    },
+    {
+        "id": 12,
+        "slug": "nvidia-geforce-rtx-3080",
+        "content": "La NVIDIA GeForce RTX 3080 è una delle schede video più potenti sul mercato, progettata per il gaming di alta qualità, il rendering 3D e l'intelligenza artificiale. Con l'architettura Ampere, offre un'esperienza di gioco in 4K fluida e supporta il ray tracing in tempo reale per un'illuminazione e un'ombreggiatura avanzate. Con 10 GB di memoria GDDR6X, è perfetta per applicazioni professionali e per i gamer più esigenti. La RTX 3080 supporta anche NVIDIA DLSS (Deep Learning Super Sampling), migliorando la qualità dell'immagine senza compromettere le prestazioni.",
+        "image": "nvidia_geforce_rtx_3080.jpeg",
+        "tags": [
+            "Schede grafiche",
+            "Gaming",
+            "Tecnologia"
+        ]
     }
 ]
-
-module.exports = products;

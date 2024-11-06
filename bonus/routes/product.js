@@ -6,10 +6,13 @@ const productsController = require('../controller/products-controller.js')
 
 
 //(index) Get all the rpoducts
-router.get('/', productsController.index);
+router.get('/', productsController.index); // /products
 
 // (show) get a single product by it's id
-router.get('/:id', productsController.show);
+router.get('/:id', productsController.show); // /products/1
+
+// (create) create new product
+router.post('/', productsController.store) // /products
 
 
 
