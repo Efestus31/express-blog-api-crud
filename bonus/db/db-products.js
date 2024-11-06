@@ -37,10 +37,10 @@ module.exports = [
     },
     {
         "id": 4,
-        "title": "Sony PlayStation 5",
-        "slug": "sony-playstation-5",
-        "content": "La PlayStation 5 di Sony è la console di gioco di ultima generazione, dotata di un processore custom AMD, GPU RDNA 2, 16 GB di RAM e un SSD ultra-veloce da 825 GB. La PS5 offre esperienze di gioco straordinarie con risoluzione 4K e frame rate fino a 120 fps. Con il controller DualSense, che introduce feedback aptico avanzato, ogni gioco sarà un'esperienza coinvolgente come mai prima d'ora.",
-        "image": "sony_playstation_5.jpeg",
+        "title": "Sony PlayStation 5 Digital Edition",
+        "slug": "sony-playstation-5-digital-edition",
+        "content": "La PlayStation 5 Digital Edition di Sony è la versione senza lettore disco della console di gioco di ultima generazione, dotata di un processore custom AMD, GPU RDNA 2, 16 GB di RAM e un SSD ultra-veloce da 825 GB. Questa versione digitale offre un'esperienza di gioco straordinaria in risoluzione 4K e frame rate fino a 120 fps. Il controller DualSense è incluso, con feedback aptico avanzato e trigger adattivi, per un'esperienza coinvolgente e immersiva.",
+        "image": "sony_playstation_5_digital_edition.jpeg",
         "tags": [
             "Console",
             "Videogiochi",
@@ -56,18 +56,6 @@ module.exports = [
         "tags": [
             "Tablet",
             "Microsoft",
-            "Tecnologia"
-        ]
-    },
-    {
-        "id": 6,
-        "title": "Logitech MX Master 3",
-        "slug": "logitech-mx-master-3",
-        "content": "Il Logitech MX Master 3 è un mouse wireless premium progettato per professionisti e creativi. Con un design ergonomico, sensore ad alta precisione e supporto per più dispositivi contemporaneamente, è perfetto per lunghe sessioni di lavoro. La batteria ricaricabile dura fino a 70 giorni con una singola carica, e la ruota di scorrimento offre un'esperienza fluida e precisa.",
-        "image": "logitech_mx_master_3.jpeg",
-        "tags": [
-            "Accessori",
-            "Mouse",
             "Tecnologia"
         ]
     },

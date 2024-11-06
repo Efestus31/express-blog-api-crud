@@ -1,5 +1,4 @@
 //import the db-products.js file
-const { count } = require('console')
 const products = require('../db/db-products.js')
 const fs = require('fs')
 
@@ -45,6 +44,7 @@ const store = (req, res) => {
         count: products.length
     })
 }
+// (update) update a product by it's id
  const update = (req, res) => {
     //find the product by id
     const product = products.find(product => product.id === parseInt(req.params.id))
@@ -63,7 +63,8 @@ const store = (req, res) => {
     if(!req.body.title || !req.body.slug ||  !req.body.content || !req.body.image || !req.body.tags) {  
         return res.status(400).json({ error: 'Some fields are missing'})
         }
-
+        //save the resource in the db file
+        fs.writeFileSync('./db/db-products.js', `module.exports = ${JSON.stringify(products, null, 4)}`)
     //return the updated product
     return res.status(201).json({
         status: 201,
@@ -71,7 +72,32 @@ const store = (req, res) => {
         count: products.length
 
     })
+
  }
+
+ const destroy = (req, res) => {
+    //find the product ny id
+    const product = products.find(product => product.id === parseInt(req.params.id))
+
+    //check if the product exist
+    if(!product){
+        return res.status(404).json({ error: `No product found with the following id: ${req.params.id}`})
+    }
+    //we create a new array of resources without the product  (found by using the find method)
+    const newProducts = products.filter(product => product.id !== parseInt(req.params.id))
+
+    //update the file db-products.js 
+    fs.writeFileSync('./db/db-products.js', `module.exports = ${JSON.stringify(newProducts, null, 4)}`)
+    
+    //return of the array
+    return res.status(201).json({
+        status: 201,
+        data: newProducts,
+        count: newProducts.length
+    })
+ }
+
+
     
 
 
@@ -79,5 +105,6 @@ module.exports = {
     index,
     show,
     store,
-    update
+    update,
+    destroy
 }
