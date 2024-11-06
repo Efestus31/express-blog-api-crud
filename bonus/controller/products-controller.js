@@ -1,4 +1,5 @@
 //import the db-products.js file
+const { count } = require('console')
 const products = require('../db/db-products.js')
 const fs = require('fs')
 
@@ -44,10 +45,39 @@ const store = (req, res) => {
         count: products.length
     })
 }
+ const update = (req, res) => {
+    //find the product by id
+    const product = products.find(product => product.id === parseInt(req.params.id))
+    //check if the user is updating the correct product
+    if(!product) {
+        return res.status(404).json({ error: `No product found with this id ${req.params.id}`})
+    }
+    //update the product
+    product.title = req.body.title;
+    product.slug = req.body.slug;
+    product.content = req.body.content;
+    product.image = req.body.image;
+    product.tags = req.body.tags;
+
+    //if some fiels are missing, we will not update them
+    if(!req.body.title || !req.body.slug ||  !req.body.content || !req.body.image || !req.body.tags) {  
+        return res.status(400).json({ error: 'Some fields are missing'})
+        }
+
+    //return the updated product
+    return res.status(201).json({
+        status: 201,
+        data: products,
+        count: products.length
+
+    })
+ }
+    
 
 
 module.exports = {
     index,
     show,
-    store
+    store,
+    update
 }

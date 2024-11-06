@@ -14,6 +14,9 @@ router.get('/:id', productsController.show); // /products/1
 // (create) create new product
 router.post('/', productsController.store) // /products
 
+// (update) update existing product
+router.put('/:id', productsController.update); // /products/:id
+
 
 
 module.exports = router
