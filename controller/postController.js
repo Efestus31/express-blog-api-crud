@@ -33,7 +33,7 @@ const show = (req, res) => {
 }
 
 
-const store = (req, res) =>{
+const store = (req, res) => {
     //Crea un nuovo oggetto all'interno del db
     const post ={
         title: req.body.title,
@@ -60,7 +60,7 @@ const store = (req, res) =>{
         counter: posts.length
     })
 }
-const update = (req, res) =>{
+const update = (req, res) => {
     //find a post by slug
     const post = posts.find(post => post.slug.toLowerCase() === req.params.slug)
     //check if the user is updating the correct post
@@ -84,11 +84,36 @@ const update = (req, res) =>{
 
     //return the update posts list
     return res.status(201).json({status: 201, data: posts})
+} 
+
+const destroy =(req, res) => {
+
+    //find the post by slug
+    const post = posts.find(post => post.slug.toLowerCase() === req.params.slug)
+
+    //check if there is deleting the correct file 
+    if(!post){
+        return res.status(404).json({
+            error: `No post found with the given slug: ${req.params.slug}`
+        })
+    }
+    //remove the resource for the array
+    const newPosts = posts.filter(post => post.slug.toLowerCase() !== req.params.slug)
+
+    //save the js file
+    fs.writeFileSync('./db/db.js', `module.export = ${JSON.stringify(newPosts, null, 4)}`)
+    //return the update posts list
+    return res.status(200).json({
+        status: 200,
+        data: newPosts
+    })
+
 }
 
 module.exports = {
     index,
     show,
     store,
-    update
+    update,
+    destroy
 }

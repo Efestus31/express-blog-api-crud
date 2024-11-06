@@ -21,7 +21,7 @@ router.post('/', postController.store) // /posts
 router.put('/:slug', postController.update)
 
  //(D) delete an existing resource
-//  router.delete('/:slug', postController.destroy)
+ router.delete('/:slug', postController.destroy)
 
 
 

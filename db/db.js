@@ -1,16 +1,4 @@
-module.exports = [
-    {
-        "slug": "torta-della-nonna",
-        "title": "Torta della Nonna",
-        "content": "Sarà che una volta le cose erano più semplici, ma erano anche molto buone. Come le crostate, i biscotti o la torta della nonna che preparava sempre con amore, anche all'ultimo momento, sapendo che saremmo passati per la merenda. Uova, zucchero e farina. Niente di più semplice, ma che nelle sue mani, mescolando e infornando, diventava una delle prelibatezze da gustare con un succo di frutta al pomeriggio o un bicchiere di latte al mattino. Ecco la nostra ricetta per la torta della nonna, ispirata all'atmosfera di casa e genuinità: con un tocco di vaniglia e una spolverata di zucchero a velo, renderete questa torta soffice e invitante. E per una volta, sarà la nonna a farvi i complimenti per aver preparato una torta così buona, che non passa mai di moda!",
-        "image": "torta_della_nonna.jpeg",
-        "tags": [
-            "Dolci",
-            "Torte",
-            "Ricette vegetariane",
-            "Ricette al forno"
-        ]
-    },
+module.export = [
     {
         "title": "Cracker alla barbabietola",
         "slug": "cracker-alla-barbabeitola",
