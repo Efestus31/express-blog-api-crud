@@ -60,9 +60,35 @@ const store = (req, res) =>{
         counter: posts.length
     })
 }
+const update = (req, res) =>{
+    //find a post by slug
+    const post = posts.find(post => post.slug.toLowerCase() === req.params.slug)
+    //check if the user is updating the correct post
+    if(!post){
+        return res.status(404).json({ error: `No post found with this slug: ${req.params.slug}!`})
+    }
+    //update the post object
+    post.title = req.body.title
+    post.slug = req.body.slug
+    post.content = req.body.content
+    post.image = req.body.image
+    post.tags = req.body.tags
+
+    //check if there are missing fields
+    if(!post.title || !post.slug || !post.content || !post.image || !post.tags){ 
+        return res.status(400).json({ error: "Missing required fields" })
+        }
+    //update the js file
+    fs.writeFileSync('./db/db.js', `module.exports = ${JSON.stringify(posts, null, 4)}`)
+
+
+    //return the update posts list
+    return res.status(201).json({status: 201, data: posts})
+}
 
 module.exports = {
     index,
     show,
-    store
+    store,
+    update
 }

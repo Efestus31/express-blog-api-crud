@@ -1,9 +1,9 @@
 module.exports = [
     {
-        "title": "Ciambellone",
-        "slug": "ciambellone",
-        "content": "Sarà che una volta le cose erano più semplici, ma erano anche molto buone. Come le crostate, i biscotti o il ciambellone che la nonna preparava anche all'ultimo sapendo che sareste passati per la merenda: uova, zucchero e farina. Niente di più basic ma che tra le sue mani, mescolando e infornando, diventava una delle prelibatezze per accompagnare il succo di frutta al pomeriggio o il latte e caffè al mattino. Ecco la nostra ricetta del ciambellone a quale atmosfera si ispira, quella di casa e genuinità: con una manciata di scorze di limone o di arancia e una spolverata di zucchero a velo renderete questa soffice delizia profumata e invitante. E per una volta sarà la nonna a farvi i complimenti per aver preparato un morbido ciambellone, così buono che non passa mai di moda!",
-        "image": "ciambellone.jpeg",
+        "slug": "torta-della-nonna",
+        "title": "Torta della Nonna",
+        "content": "Sarà che una volta le cose erano più semplici, ma erano anche molto buone. Come le crostate, i biscotti o la torta della nonna che preparava sempre con amore, anche all'ultimo momento, sapendo che saremmo passati per la merenda. Uova, zucchero e farina. Niente di più semplice, ma che nelle sue mani, mescolando e infornando, diventava una delle prelibatezze da gustare con un succo di frutta al pomeriggio o un bicchiere di latte al mattino. Ecco la nostra ricetta per la torta della nonna, ispirata all'atmosfera di casa e genuinità: con un tocco di vaniglia e una spolverata di zucchero a velo, renderete questa torta soffice e invitante. E per una volta, sarà la nonna a farvi i complimenti per aver preparato una torta così buona, che non passa mai di moda!",
+        "image": "torta_della_nonna.jpeg",
         "tags": [
             "Dolci",
             "Torte",
