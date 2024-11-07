@@ -22,9 +22,9 @@ app.get('/', (req, res) => {
 app.listen(port, (req, res) => {
     console.log(`Server is running at ${host}:${port}`);
 });
-app.use('/posts', (req, res, next) =>{
-    throw new Error('everything is broken! :(');
-})
+// app.use('/posts', (req, res, next) =>{
+//     throw new Error('everything is broken! :(');
+// })
 app.use('/posts', loggerMiddleware);
 
 app.use('/posts', postRouter);
