@@ -1,5 +1,6 @@
 //import the db-products.js file
 const products = require('../db/db-products.js')
+//import the fs metod
 const fs = require('fs')
 
 //(index) Get all the products
@@ -13,6 +14,7 @@ const show = (req, res) =>{
     const product = products.find(product => product.id === parseInt(req.params.id))
     //check if the product exists
     if(!product){
+        //return a 404 error
        return res.status(404).json({ error: `No product found with this id: ${req.params.id}`})
     }
     //return the selected product
@@ -38,6 +40,8 @@ const store = (req, res) => {
     //save the resource in the db file
     fs.writeFileSync('./db/db-products.js', `module.exports = ${JSON.stringify(products, null, 4)}`)
 
+    //return a success message
+    //with the array + the addedd product
     return res.status(201).json({
         status: 201,
         data: products,
@@ -61,11 +65,13 @@ const store = (req, res) => {
 
     //if some fiels are missing, we will not update them
     if(!req.body.title || !req.body.slug ||  !req.body.content || !req.body.image || !req.body.tags) {  
+        //return an error message 400
         return res.status(400).json({ error: 'Some fields are missing'})
         }
         //save the resource in the db file
         fs.writeFileSync('./db/db-products.js', `module.exports = ${JSON.stringify(products, null, 4)}`)
-    //return the updated product
+
+    //return 201 status and the updated product
     return res.status(201).json({
         status: 201,
         data: products,
@@ -74,9 +80,9 @@ const store = (req, res) => {
     })
 
  }
-
+// (delete) delete a product by it's id
  const destroy = (req, res) => {
-    //find the product ny id
+    //find the product by id
     const product = products.find(product => product.id === parseInt(req.params.id))
 
     //check if the product exist
@@ -90,8 +96,8 @@ const store = (req, res) => {
     fs.writeFileSync('./db/db-products.js', `module.exports = ${JSON.stringify(newProducts, null, 4)}`)
     
     //return of the array
-    return res.status(201).json({
-        status: 201,
+    return res.status(200).json({
+        status: 200,
         data: newProducts,
         count: newProducts.length
     })
@@ -100,7 +106,7 @@ const store = (req, res) => {
 
     
 
-
+//export the methods
 module.exports = {
     index,
     show,

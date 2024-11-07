@@ -1,10 +1,10 @@
-const { json } = require('express')
+//import the db file
 const posts = require('../db/db.js')
 //integrazione per bonus
 //method fs per leggere e modificare i file di sistema
 const fs = require('fs')
 
-
+//(R) index metodo che restituisce tutti gli oggetti presenti nel db
 const index = (req, res) => {
 
     //console.log(posts);
@@ -17,7 +17,8 @@ const index = (req, res) => {
         }
     )
 }
-
+//(R) show metodo che restituisce un singolo oggetto presente nel db
+//tramite il suo slug
 const show = (req, res) => {
      const post = posts.find(post => post.slug === req.params.slug)
 
@@ -32,7 +33,7 @@ const show = (req, res) => {
      })
 }
 
-
+//(C) create metodo che aggiunge un oggetto al db
 const store = (req, res) => {
     //Crea un nuovo oggetto all'interno del db
     const post ={
@@ -60,6 +61,8 @@ const store = (req, res) => {
         counter: posts.length
     })
 }
+
+//(U) update metodo che modifica un oggetto presente nel db
 const update = (req, res) => {
     //find a post by slug
     const post = posts.find(post => post.slug.toLowerCase() === req.params.slug)
@@ -74,7 +77,7 @@ const update = (req, res) => {
     post.image = req.body.image
     post.tags = req.body.tags
 
-    //check if there are missing fields
+    //controlla se ci sono campi vuoti
     if(!post.title || !post.slug || !post.content || !post.image || !post.tags){ 
         return res.status(400).json({ error: "Missing required fields" })
         }
@@ -86,6 +89,7 @@ const update = (req, res) => {
     return res.status(201).json({status: 201, data: posts})
 } 
 
+//(D) delete metodo che cancella un oggetto presente nel db
 const destroy =(req, res) => {
 
     //find the post by slug
@@ -110,6 +114,7 @@ const destroy =(req, res) => {
 
 }
 
+//export the methods
 module.exports = {
     index,
     show,
