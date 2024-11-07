@@ -1,4 +1,4 @@
-module.export = [
+module.exports = [
     {
         "title": "Cracker alla barbabietola",
         "slug": "cracker-alla-barbabeitola",

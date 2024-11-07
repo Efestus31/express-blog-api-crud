@@ -1,8 +1,8 @@
 //import express
 const express = require('express')
-
 //define the router instance
 const router = express.Router()
+//imports the controller with all his functions
 const postController = require('../controller/postController.js')
 //define all routes here
 

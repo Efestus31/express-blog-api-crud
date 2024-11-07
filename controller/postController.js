@@ -7,15 +7,14 @@ const fs = require('fs')
 //(R) index metodo che restituisce tutti gli oggetti presenti nel db
 const index = (req, res) => {
 
-    //console.log(posts);
+    console.log(posts);
     
     //send response with the 200 status
     res.status(200).json(
         {
             data: posts,
             counter: posts.length
-        }
-    )
+        })
 }
 //(R) show metodo che restituisce un singolo oggetto presente nel db
 //tramite il suo slug
@@ -105,7 +104,7 @@ const destroy =(req, res) => {
     const newPosts = posts.filter(post => post.slug.toLowerCase() !== req.params.slug)
 
     //save the js file
-    fs.writeFileSync('./db/db.js', `module.export = ${JSON.stringify(newPosts, null, 4)}`)
+    fs.writeFileSync('./db/db.js', `module.exports = ${JSON.stringify(newPosts, null, 4)}`)
     //return the update posts list
     return res.status(200).json({
         status: 200,
